@@ -26,7 +26,7 @@
 
 OpenAI 发布 `@openai/codex-security`，一个 CLI 和 TypeScript SDK，用于发现、验证、修复代码中的安全漏洞，并能在 CI 中跑安全检查、追踪 findings 随时间变化。安装即用：`npm install @openai/codex-security` → `npx codex-security login` → `npx codex-security scan .`，认证支持 ChatGPT 登录或 API key（CI 场景）。这标志着 Codex 产品线从「生成代码」正式扩展到「守护代码」：安全扫描从独立的 SAST 工具，变成 coding agent 原生能力的一部分，开发者不用再切换上下文到传统安全工具。
 
-**社群信号：Tibo 定调「智能便宜到不值得计量」。** Codex 产品负责人 Tibo（[@thsottiaux](https://x.com/thsottiaux)）7/30 发推「This week is all about intelligence too cheap to meter. Tomorrow we ship again.」，并披露 GPT-5.6 Sol 其实是 ARC-AGI-3 的 SOTA，只需两个设置改动（允许长时间推理、跨多 context window，靠 canonical compaction）。coding agent 的边际成本正快速趋零，「$/token」会让位于「能跑多复杂的任务」。
+**社群信号：Codex 本周重置 3 次额度，Sol 优化后更耐用、5h 限制回归。** 据 [codex-resets.com](https://codex-resets.com/) 记录，Codex 本周重置了 3 次用量额度（平均每两天一次），被社区戏称「赛博菩萨」。Tibo（[@thsottiaux](https://x.com/thsottiaux/status/2082317452755751098)）7/29 发推解释：GPT-5.6 Sol 之前比预期更快消耗额度，但 OpenAI 没有降低任何订阅的用量，而是优化了 Sol，典型使用下额度能多用约 18%，同时预告 5h 使用限制将回归。
 
 ### 🧰 其他工具与模型
 
