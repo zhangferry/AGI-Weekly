@@ -14,7 +14,7 @@
 
 **[auto mode 8/14 起成 Claude Code 默认权限模式，会话间可互发消息带名字。](https://claude.com/blog/auto-mode-default-in-claude-code)**
 
-- 8/14 起 Pro/Max/Team 计划的新会话默认开 auto mode，分类器自动放行或拦截工具调用，取代逐条确认。[ClaudeDevs 的演示帖](https://x.com/ClaudeDevs/status/2086844755770757531)解释了它如何判断命令是否安全。安全论证很硬：1053 人受控实验里人工审核只拦下 13.6% 的危险命令，auto mode 拦下 89%，而且会话越长人工越松懈（拦截率从 17% 跌到 5%），分类器始终稳定。第三方 Trajectory Labs 的 720 次提示注入测试中，Fable 5/Opus 5/Sonnet 5 配 auto mode 全部 0 漏洞。auto mode 用户多发约 25% PR，分类器开销不再收费。
+- 8/14 起 Pro/Max/Team 计划的新会话默认开 auto mode，分类器自动放行或拦截工具调用，取代逐条确认。[ClaudeDevs 的演示帖](https://x.com/ClaudeDevs/status/2086844755770757531)解释了它如何判断命令是否安全。实验结果显示：在 1053 人受控实验中，人工审核只拦下 13.6% 的危险命令，auto mode 拦下 89%；而且会话越长人工越松懈（拦截率从 17% 跌到 5%），分类器始终稳定。第三方 Trajectory Labs 的 720 次提示注入测试中，Fable 5/Opus 5/Sonnet 5 配 auto mode 全部 0 漏洞。auto mode 用户多发约 25% PR，分类器开销不再收费。
 - 多会话协作升级：一个会话能把任务摘要（不是历史或文件）发给另一个会话，对方可在执行中接收，也能反向提问拿回答，Claude 自己也能主动发起消息。进一步可给会话起名字（如 `--name backend` / `--name frontend`）让它俩互相 DM，把多 agent 编排从手工 copy-paste 升级成有传输层的协议。目前 macOS/Linux 可用，社区已警觉到这相当于 AI 蠕虫的传输层。
 - Managed Agents 四更新：session budget 上限（到顶 pause 加 `budget_reached` 事件）、从仓库 `.claude/skills` 自动加载 skills、以及 advisor（roster 加一行，让工作中的 agent 中途呼叫更强模型拿 second opinion）。
 
@@ -152,7 +152,7 @@ Tailscale 联合 SQLite 核心开发者，追踪到 SQLite 一个潜伏 16 年�
 
 ## ✉️ 关于周报
 
-本周报的内容来自一套我自己打磨出的自动化采集工具。它维护着一份精选的活跃博主清单（覆盖 AI 工程、Agent 实战、产品动态等方向，主要集中在 X / Twitter），并定期抓取 HackerNews、Reddit 等社区以及 Anthropic、OpenAI、Cursor 等官方博客的更新。筛选时还会参考我维护的 [Daily News Report](https://daily.zhangferry.com/)（[AIDailyNews](https://github.com/zhangferry/AIDailyNews)），补充 RSS 信息源里的技术文章、官方动态和社区内容。
+本周报的内容来自一套我自己打磨出的自动化采集工具。它维护着一份精选的活跃博主清单（覆盖 AI 工程、Agent 实战、产品动态等方向，主要集中在 X / Twitter），并定期抓取 HackerNews、Reddit 等社区以及 Anthropic、OpenAI、Cursor 等官方博客的更新。
 
 每天采集一次，每条内容会按「洞见性、独特性、深挖价值」三个维度打分排序，算法筛出高分候选内容。周报会汇总近 7 天内容，再经过人工去重、剔除和把关，最终汇编成你看到的这期周报。不是纯 AI 生成，而是机器采集 + 人工筛选的结果。
 
