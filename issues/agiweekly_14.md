@@ -4,7 +4,7 @@
 
 ## 📈 本周趋势
 
-本周与每个 coding agent 用户钱包直接相关：OpenAI 把 Codex 与 ChatGPT Work 的 5 小时限额加了回来，[Tibo 宣布](https://x.com/thsottiaux/status/2092058556707344708)次日生效、仅 Plus 档，Pro 豁免；7 月 12 日的「临时取消」只撑了六周。同一周，Shopify CEO Tobi Lütke [考虑禁用 Claude Code](https://x.com/tobi/status/2092259436538495186)，直到它支持读取 AGENTS.md：只认 CLAUDE.md 在团队混用工具时造成 split brain。平台收回慷慨，用户要回标准，规则谈判成了本周主旋律。
+本周与每个 coding agent 用户钱包直接相关：OpenAI 把 Codex 与 ChatGPT Work 的 5 小时限额加了回来。[Tibo 8 月 25 日宣布](https://x.com/thsottiaux/status/2092058556707344708)，8 月 26 日生效，受影响的只有 Plus 订阅用户，Pro 订阅继续不受限。7 月 12 日的「临时取消」只撑了六周。同一周，Shopify CEO Tobi Lütke [考虑禁用 Claude Code](https://x.com/tobi/status/2092259436538495186)，直到它支持读取 AGENTS.md：只认 CLAUDE.md 在团队混用工具时造成 split brain。平台收回慷慨，用户要回标准，规则谈判成了本周主旋律。
 
 模型侧，GLM-5.3-Flash 以匿名模型 Ox Alpha 登顶 OpenRouter 后官宣开源：Artificial Analysis 智能指数 57 分排全榜第 3，单任务成本 $0.09，只有头部闭源的零头，短板是速度偏慢。同日 Qwen3.8-Flash-Next 放出 Qwen4 架构预览。安全线密集：OpenAI 复盘 Hugging Face 入侵事件并遭州级调查，Anthropic 公开 containment 架构，Trail of Bits 实测 cyber agent 逃出 QEMU/KVM。agent 越来越强，装它的容器跟不跟得上，成了厂商与执法者共同的问题。
 
@@ -29,7 +29,7 @@
 
 **[5 小时限额回归（8 月 26 日生效），0.150.0 主打通任务间协作。](https://github.com/openai/codex/releases)**
 
-- **5h 限额恢复**：[Tibo 宣布](https://x.com/thsottiaux/status/2092058556707344708) Plus 档的 ChatGPT Work 与 Codex 恢复 5 小时滚动窗口。理由：5h 能平滑算力负载、保住周用量额度；Plus 用户偏轻度，容易一周额度意外耗尽后困惑。Pro $100/$200 未来几个月不启用。7 月 12 日「临时取消」时的请愿没能改变结局，重度 Plus 用户要么接受节奏，要么升级 Pro。
+- **5h 限额恢复（8 月 26 日生效）**：[Tibo 8 月 25 日宣布](https://x.com/thsottiaux/status/2092058556707344708)，Plus 订阅的 ChatGPT Work 与 Codex 恢复 5 小时滚动窗口，Pro $100/$200 订阅未来几个月不受此限制。理由：5h 能平滑算力负载、保住周用量额度；Plus 用户偏轻度，容易一周额度意外耗尽后困惑。7 月 12 日「临时取消」时的请愿没能改变结局，重度 Plus 用户要么接受节奏，要么升级 Pro。
 - `@` mentions 引用其他 Codex 任务，可以在终端里读、建任务和给任务发消息，多任务协作有了正式入口。
 - /copy 变成选择器：完整回复、单个代码块、引用块任选。
 - 未命名任务自动起描述性标题，/rename 会给一个可编辑的建议标题。
