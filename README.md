@@ -8,12 +8,14 @@ AGI 摸鱼周报是一份每周更新的 AI 技术周报，关注 Coding Agent�
 
 ## 最新一期
 
-- [AGI 摸鱼周报 #12：Claude 给所有生成内容嵌入了不可见水印](./issues/agiweekly_12.md)
+- [AGI 摸鱼周报 #14：六周无限额度实验结束，Codex 的 5 小时限额回来了](./issues/agiweekly_14.md)
 
 ## 往期周报
 
 | 期数 | 标题 | 博客 |
 | --- | --- | --- |
+| #14 | [六周无限额度实验结束，Codex 的 5 小时限额回来了](./issues/agiweekly_14.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_14/) |
+| #13 | [Linear 首份数据报告：agent 团队 PR 两年翻三倍，但业务价值是否提升Linear自己也说不清](./issues/agiweekly_13.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_13/) |
 | #12 | [Claude 给所有生成内容嵌入了不可见水印](./issues/agiweekly_12.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_12/) |
 | #11 | [reviewer 必须比 writer 强，否则越帮越忙](./issues/agiweekly_11.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_11/) |
 | #10 | [Claude Opus 5 发布，接近 Fable 5 智能、价格减半](./issues/agiweekly_10.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_10/) |
