@@ -10,7 +10,7 @@
 * Qwen3.8-Max 登顶 Code Arena 总榜（中国模型首次），定价 $5/M；
 * Gemini 3.8 Flash 用零头成本在 DeepSWE 上超过多数更大的模型；
 
-Fable 5.1 的应战方式是 cache reads 降价 75%。前沿模型的智能差距在快速抹平，价格成了选型的主要变量，而 GPT-6 已进入发布前预热，多方信号指向近期落地，这场混战还要加码。
+Fable 5.1 的应战方式是 cache reads 降价 75%。前沿模型的智能差距在快速抹平，价格成了选型的主要变量，而 GPT-6 Astra 在本文定稿数小时后的 9 月 4 日凌晨正式发布，超级发布周直接变成五连发。
 
 另一条主线是 AI 成本从采购问题变成工程问题，本周有三组公开数据：同一模型换 12 种 harness 配置，单任务成本差 17.5 倍（FrontierHarness）；Uber agent 用量半年涨 7 倍，总花费靠把成本拆成乘法方程逐项优化才保持持平；专门构造的安全系统在 curl 上 6:0 完胜 frontier 模型通用 agent（AISLE）。模型侧的差距抹平之后，工程侧的差距刚开始拉开。
 
@@ -38,7 +38,11 @@ Fable 5.1 的应战方式是 cache reads 降价 75%。前沿模型的智能差�
 
 ### 🧰 其他工具与模型
 
-本周是模型密集发布周，四个前沿模型成组出现，放在一起看：
+本周是模型密集发布周，五个前沿模型成组出现（GPT-6 Astra 在本文定稿后数小时补发），放在一起看：
+
+- **GPT-6 Astra 发布**（9 月 4 日凌晨）：OpenAI 新旗舰，此前预告的「Astra」正是它，computer use、软件工程、网络安全、科学全领域自称 SOTA。效果上 Terminal-Bench 4.0 达 57.9%，超过 Fable 5.1 的 55.8% 与 GPT-5.6 Sol 的 37.3%，每任务成本还比 Fable 5.1 低约 9%、比 Sol 低约 63%；ARC-AGI-3（99.9%）、FrontierMath Tier 4（98%）、ExploitBench（100%）三榜直接打满；OSWorld 2.0 单任务约 40 分钟拿到 72.6%，比 Sol 快约 47%。Codex harness 同步更新：Mind2Web 任务完成快 1.9 倍，并引入跨上下文窗口的笔记机制替代反复 compaction（旧窗口可回搜，实验性开关已进 config.toml）。注意 rollout 混乱：目前仅开放部分组织，未来几天才扩展到 Plus/Pro/Business/Enterprise 与 API、AWS；此前预告的 misalignment monitor 会自动暂停可疑任务，官方明说可能误伤合法工作；Sam Altman 已为混乱的发布流程致歉。
+
+![](https://cdn.zhangferry.com/Images/x-curator/R-2026-09-03/gpt6-astra-tweet.png)
 
 - **Qwen3.8-Max-0902**（9 月 2 日）：阿里旗舰的 coding 特化升级（2.4T 总参、95B 激活、1M 上下文），登顶 Code Arena 总榜第一，WebDev 榜分数从 1669 涨到 1691 刷新纪录，是第一个做到这点的中国模型，同时 $5/MToken 的定价把性价比拉到了前排。
 
@@ -53,7 +57,6 @@ Fable 5.1 的应战方式是 cache reads 降价 75%。前沿模型的智能差�
 ![](https://cdn.zhangferry.com/Images/x-curator/R-2026-09-03/gemini-flash.png)
 
 - **GLM-5.3 完整版权重开源**（8 月 28 日）：Z.ai 把 coding 特化旗舰也放进开源行列（Flash 版已是 MIT 协议），自部署与 agent 后端选型的性价比计算需要重做。
-- **OpenAI 预告 Astra**（9 月 2 日）：其首个达到 Critical 网络安全能力阈值的模型，评测中自主发现并使用了两个真实零日漏洞。注意上线后的变化：misalignment monitor 会自动暂停可疑任务，API 侧直接停止，官方明说可能误伤合法工作。
 - **Cursor 开放 Self-Hosted Machines**（9 月 3 日）：云 agent 可跑在你自己管理的机器池上，只有出站 HTTPS 连接。Cursor 内部 60% 以上已合并的 PR 来自云 agent，云 agent 的真实渗透率可以拿这个数当参照。
 
 社群信号：Tobi Lütke（Shopify CEO）对本周的评价是「what a week for new ai models」，他同时判断 Muse 1.3 「looks very strong」。头部从业者的反应也差不多：前沿模型差距在快速抹平，价格开始主导选型。
@@ -92,7 +95,7 @@ Uber 工程团队 8 月 27 日发布长文，公开了内部 agent 全家桶的�
 
 Anthropic 9 月 1 日发布 Fable 5.1 与 Mythos 5.1，两者是同一模型的不同护栏档位：Fable 5.1 全面可用（模型 ID `claude-fable-5-1`），Mythos 5.1 仅限受信访问计划。实际影响有三点：cache reads 从 $1 降到 $0.25/M（典型负载总成本降约 25%，高 agentic 任务最高降约 45%，Claude Code 会话最高降 38%）；长任务走得更远才需要人工介入，卡住会主动报告；网络安全护栏误报减少 60%，Claude Code 每会话干预约少 60%。
 
-评测上 Terminal-Bench 4.0 达 55.8%（Fable 5 为 42%、Opus 5 为 52.3%、GPT-5.6 Sol 为 37.3%），Terminal-Bench-Science 52.6%（Opus 5 为 29.0%）。Millennium 测试中它找到了工程师几年未能解释的内部系统罕见崩溃根因。
+评测上 Terminal-Bench 4.0 达 55.8%（Fable 5 为 42%、Opus 5 为 52.3%、GPT-5.6 Sol 为 37.3%），Terminal-Bench-Science 52.6%（Opus 5 为 29.0%）。两天后这个榜首被 GPT-6 Astra 的 57.9% 拿走，但 Astra 每任务成本只比它低约 9%，价格优势仍在 Fable 这边。Millennium 测试中它找到了工程师几年未能解释的内部系统罕见崩溃根因。
 
 防蒸馏是这次发布的另一条主线：新 API 账户不能再编辑多轮对话中的历史上下文，堵死了保留 thinking transcript 提取推理过程的蒸馏技巧；配合 8 月 2 日后发布的模型输出全部带不可见水印（符合 EU AI Act），输入侧和输出侧两头收紧。发布日所有用户的 5 小时和周限额已重置。
 
