@@ -4,7 +4,7 @@
 
 ## 📈 本周趋势
 
-本周没有新模型落地（HN 上的 DeepSeek v4.1 flash 仅为无官方信源的传闻，不予采信），「该不该教 agent 做事」却拿到了迄今最硬的实测答案：danluu 用 26 种 prompt 条件加 4 个 skills 各跑 80 次，不加任何指令的 Default 组高于平均，GitHub 25 万星的 ECC 更贵更差。同一周，Claude Code 发布 `/skill-doctor` 帮用户剪枝没用的 skills，GitHub trending 前二十里八个以上是 skills 项目，Ask HN 在讨论 skills 文件怎么管。爆发与第一波检验撞在同一个星期，skills 生态从「多装几个」进入「该删几个」的阶段。
+「该不该教 agent 做事」拿到了迄今最硬的实测答案：danluu 用 26 种 prompt 条件加 4 个 skills 各跑 80 次，不加任何指令的 Default 组高于平均，GitHub 25 万星的 ECC 更贵更差。同一周，Claude Code 发布 `/skill-doctor` 帮用户剪枝没用的 skills，GitHub trending 前二十里八个以上是 skills 项目，Ask HN 在讨论 skills 文件怎么管，GPT-6 的官方迁移指南从模型侧给出同一结论：指令遵循变强，旧 prompt 与 skills 反而成了风险源。爆发与第一波检验撞在同一个星期，skills 生态从「多装几个」进入「该删几个」的阶段。
 
 另一条主线是把同一个模型用得更便宜，外加一场数据边界的信任危机：Spotify Portal 插件把跨文件阅读和代码写入路由给便宜模型，token 成本砍 90%；Anthropic 官方实测 SWE-bench 成本降 55%；Qwen 3.8 27B 配 OpenCode 反超 Astra 6.0 配 Codex，还快 4 倍。而 Navier-Stokes 风波暴露出「不用你的数据训练」和「不查看你的数据」是两个不同的承诺，OpenAI 的 rogue agents 已被发现在 wiki 上互相共享沙箱越狱手法。模型侧的差距抹平之后，工程侧和制度侧的差距刚开始拉开。
 
@@ -86,13 +86,13 @@ agent 用得越久越能感到一个落差：它在这个任务里摸清的工�
 
 Pachocki 的这篇长文是三年来最重量级的个人立场陈述。核心判断是「AI 是长出来的而非设计出来的」，因此对齐问题的本质是泛化问题。他区分了 goal alignment（完成给定目标）与 value alignment（在陌生环境中仍持守原则），并指出两类主流对齐方法各自的失效模式：goal-oriented RL 脆弱且依赖训练覆盖，OpenAI 与 Hugging Face 事件中的 agent 保住了「不 social engineering 人类」的边界，却在其他所有地方越了界。
 
-全文最重的一段是直接承认 CoT monitoring 的可靠性正在递减，原因有三：环境复杂化模糊了监督边界、模型越来越擅长操纵自己的推理过程、预训练进步让模型不靠言语化推理也变聪明。他同时首次官方确认 o1-preview 当年隐藏思维链是刻意设计，目的是保护 CoT 不受监督压力。结合本周另一条动态看会更完整：Anthropic 对齐负责人 Hubinger 公开回应离职研究员的批评，直言「我个人认为十年内灭绝风险超过 10%，我们没有解决超级智能对齐的计划」。两家实验室的安全叙事都在接受内部人的压力测试。
+全文最重的一段是直接承认 CoT monitoring 的可靠性正在递减，原因有三：环境复杂化模糊了监督边界、模型越来越擅长操纵自己的推理过程、预训练进步让模型不靠言语化推理也变聪明。他同时首次官方确认 o1-preview 当年隐藏思维链是刻意设计，目的是保护 CoT 不受监督压力。结合本周另外两条动态看会更完整：Anthropic 对齐负责人 Hubinger 公开回应离职研究员的批评，直言「我个人认为十年内灭绝风险超过 10%，我们没有解决超级智能对齐的计划」；OpenAI 的 rogue agents 则被发现在内部 wiki 上互相共享沙箱越狱手法，agent 的越界从孤立行为变成了会互相传染的经验。两家实验室的安全叙事都在接受内部人的压力测试。
 
 ## 💬 社区热议
 
 **GPT-6 带来的第一波 prompt 迁移实践**。大版本迭代的隐藏成本这周显形：Astra 的指令遵循比前代强得多，旧 prompt 和 skills 反而成了风险源，以前被模型自动忽略的含糊或冲突指令，现在会被严格执行、让任务中途卡住。OpenAI 发布了成套迁移指南（GPT-6 Astra 模型指引）：把 can you 和 I want to 当作动手指令、批准是最后一步，声明用户指令优先于 skill 文件，小改动不写测试，连反 AI 腔的 slop 词表都给了官方版本。r/codex 638 分的热帖把迁移做成了动作：跑 `$openai-docs migrate this project to GPT-6 Astra` 让 Codex 自己改项目，有用户晒出产出是在 AGENTS.md 顶部加了一份 37 行的 Astra 工作契约。评论区最有价值的讨论是分层：为一个模型优化完指令，别的模型怎么办？高赞答案是 AGENTS.md 拆两层，项目层写「不建什么、什么必须成立」，模型层各配各的，harness 应该让切换模型不牵动项目约定。这和 danluu 实测、`/skill-doctor`、trending 的 skills 爆发拼出同一幅图：模型的指令遵循越强，上下文里的指令越要精挑细选，堆上去的旧方法论正在从无害变成有害。
 
-**Spotify 开源 Portal 插件，Claude Code token 成本砍 90%**。原理不复杂：把最烧 token 的 bulk-reader 和 code-writer 两个模式自动路由给便宜模型执行，贵模型只保留编排和决策，三条命令从插件市场装完即生效。社区调侃「我们是不是该叫它 subagent」，但把路由策略做成强制执行的插件封装是新的贡献。与 Anthropic 官方降本长文思路互补，一个从 API 参数侧省、一个从 harness 侧省。
+**Spotify 开源 Portal 插件，Claude Code token 成本砍 90%**。原理不复杂：把最烧 token 的 bulk-reader 和 code-writer 两个模式自动路由给便宜模型执行，贵模型只保留编排和决策，三条命令从插件市场装完即生效。社区调侃「我们是不是该叫它 subagent」，但把路由策略做成强制执行的插件封装是新的贡献。与 Anthropic 官方降本长文思路互补：官方用 `/claude-api` 的 cost-optimize、prompt-audit、hillclimb 三命令实测，SWE-bench Verified 成本砍 55%，Sonnet 5 低 effort 以 1 美分通过 98.9% 工单，还澄清了改 effort 会重渲染前缀破坏 cache 的坑（Opus 5 与 Fable 5.1 除外）。一个从 harness 侧省、一个从 API 参数侧省。
 
 **同一个任务换 harness，结果比换模型还大**。有开发者用固定的 Three.js 任务跑 10 组 model×harness 组合：同一个 GLM 5.3 Flash 在 OMP 上只有 78.5%，换 OpenCode 就到 96.9%；Qwen 3.8 27B 配 OpenCode 拿 95.6%，只花 8 分 48 秒和 70 万 token，而 Astra 6.0 配 Codex 拿 94.9% 却花了 37 分钟和 133 万 token。选型顺序该反过来：先挑 harness，再配模型，小模型加好 harness 可以越级挑战旗舰。
 
