@@ -8,12 +8,13 @@ AGI 摸鱼周报是一份每周更新的 AI 技术周报，关注 Coding Agent�
 
 ## 最新一期
 
-- [AGI 摸鱼周报 #16：什么都不装的 agent，比用 25 万星的 skill 效果更好](./issues/agiweekly_16.md)
+- [AGI 摸鱼周报 #17：模型越强，harness 越轻还是越重？](./issues/agiweekly_17.md)
 
 ## 往期周报
 
 | 期数 | 标题 | 博客 |
 | --- | --- | --- |
+| #17 | [模型越强，harness 越轻还是越重？](./issues/agiweekly_17.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_17/) |
 | #16 | [什么都不装的 agent，比用 25 万星的 skill 效果更好](./issues/agiweekly_16.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_16/) |
 | #15 | [模型超级周，GPT-6 登场](./issues/agiweekly_15.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_15/) |
 | #14 | [六周无限额度实验结束，Codex 的 5 小时限额回来了](./issues/agiweekly_14.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_14/) |
