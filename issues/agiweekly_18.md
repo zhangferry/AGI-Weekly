@@ -1,4 +1,4 @@
-# AGI 摸鱼周报 #18：为什么 Jev 火起来了
+# AGI 摸鱼周报 #18：Jev 是什么？不生成文本，只做判断，便宜一百倍
 
 ![](https://cdn.zhangferry.com/Images/x-cover.png)
 
