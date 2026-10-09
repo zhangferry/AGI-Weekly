@@ -8,12 +8,14 @@ AGI 摸鱼周报是一份每周更新的 AI 技术周报，关注 Coding Agent�
 
 ## 最新一期
 
-- [AGI 摸鱼周报 #17：模型越强，harness 越轻还是越重？](./issues/agiweekly_17.md)
+- [AGI 摸鱼周报 #19：OpenAI dots 发布，Personal AI 领域迎来新的竞争者](./issues/agiweekly_19.md)
 
 ## 往期周报
 
 | 期数 | 标题 | 博客 |
 | --- | --- | --- |
+| #19 | [OpenAI dots 发布，Personal AI 领域迎来新的竞争者](./issues/agiweekly_19.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_19/) |
+| #18 | [Jev 是什么？不生成文本，只做判断，便宜一百倍](./issues/agiweekly_18.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_18/) |
 | #17 | [模型越强，harness 越轻还是越重？](./issues/agiweekly_17.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_17/) |
 | #16 | [什么都不装的 agent，比用 25 万星的 skill 效果更好](./issues/agiweekly_16.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_16/) |
 | #15 | [模型超级周，GPT-6 登场](./issues/agiweekly_15.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_15/) |
