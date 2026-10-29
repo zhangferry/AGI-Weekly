@@ -40,7 +40,7 @@ skill 从 Claude Code 的一项功能长成了独立生态层，这是本周最�
 
 **Gemini 4 Carbon 登顶但先给安全团队**：在刚更新的 Artificial Analysis Intelligence Index v5.0 上以 59 分第一，距上代 Argon 发布仅两周。对齐数据是亮点：Terminal-Bench 4.0 成功作弊率降到 0.0%，内部团队的高严重性错位警报下降近 80%；安全三项 SOTA（漏洞发现 88.2%、利用验证 54.8%、补丁修复 71.0%）。注意发布方式：本周只开放给 cyber defenders（Fairwind Program），API 暂不可用，模型选型先别动。
 
-![](https://cdn.zhangferry.com/Images/x-curator/R-2026-10-29/carbon.png)
+![](https://cdn.zhangferry.com/Images/x-curator/R-2026-10-29/carbon-v2.png)
 
 **Kimi K3.1 Pro：3T 级开源逼近 Opus 5.5**：1M 上下文，11 月 4 日开放全量权重；用 Claude Code harness 跑 Terminal-Bench 4.0 拿到 65.7%，超过 GPT-6 Astra（58.2%），逼近 Opus 5.5（66.4%），第三方实测 AA 智能指数全球第四、开源第一，文档与表格类基准超过 GPT-6 Astra 与 Opus 5.5。最有信息量的是安全章节：官方主动从训练数据移除 cyber 语料并公开完整数据（漏洞利用 pass@3 从 90.5% 压到 81.0%），开源阵营第一次给出「能力上限是设计选择」的量化样本。另有 2-3 倍速度的 Highspeed 版。
 
