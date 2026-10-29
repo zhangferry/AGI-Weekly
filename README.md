@@ -8,12 +8,14 @@ AGI 摸鱼周报是一份每周更新的 AI 技术周报，关注 Coding Agent�
 
 ## 最新一期
 
-- [AGI 摸鱼周报 #19：OpenAI dots 发布，Personal AI 领域迎来新的竞争者](./issues/agiweekly_19.md)
+- [AGI 摸鱼周报 #21：Anthropic 说，你的 agent 可能拆多了](./issues/agiweekly_21.md)
 
 ## 往期周报
 
 | 期数 | 标题 | 博客 |
 | --- | --- | --- |
+| #21 | [Anthropic 说，你的 agent 可能拆多了](./issues/agiweekly_21.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_21/) |
+| #20 | [当 AI 能拆解一切软件，商业秘密还剩什么？](./issues/agiweekly_20.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_20/) |
 | #19 | [OpenAI dots 发布，Personal AI 领域迎来新的竞争者](./issues/agiweekly_19.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_19/) |
 | #18 | [Jev 是什么？不生成文本，只做判断，便宜一百倍](./issues/agiweekly_18.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_18/) |
 | #17 | [模型越强，harness 越轻还是越重？](./issues/agiweekly_17.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_17/) |
