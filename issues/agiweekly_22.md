@@ -6,7 +6,7 @@
 
 等官方加功能，通常要按版本排队。DeepSeek Harness 的创造模式把这件事变成了一次对话：说清要什么，agent 写完插件，装上就能用。官方演示从悬浮番茄钟延伸到设计工作台、小游戏和模型可视化。开发者也可以从项目里的小需求开始，比如整理 TODO、展示测试结果或接入团队的 MCP 服务。同期公开的 Super-agent 原型，则把 issue、PR 和后续评审接成持续任务，减少来回给 agent 搬运上下文的操作。
 
-Surge 的对照实验里，同一模型提高推理预算的收益高于继续叠加编排；Codex 社区开始明确检查子 agent 是否继承父会话，避免独立 review 带上原有讨论。Karpathy 用 HN 视频推荐做出 HackerTube，从现成数据一路做到上线；Cursor 的百小时复盘则提醒使用者，测试变绿也可能根本没有验证目标功能。Zombie Stats 继续追问引用能否查到原始研究。模型侧的开放权重竞赛没有停：Mistral 之后 Kimi K3.1 Pro 放出权重，腾讯 Hy4 同周发布，Clover 走的是扩散生成，社区里还有 Revolut 的自托管实践。
+Surge 的对照实验里，同一模型提高推理预算的收益高于继续叠加编排；Codex 社区开始明确检查子 agent 是否继承父会话，避免独立 review 带上原有讨论。Karpathy 用 HN 视频推荐做出 HackerTube，从现成数据一路做到上线；Cursor 的百小时复盘则提醒使用者，测试变绿也可能根本没有验证目标功能。Zombie Stats 继续追问引用能否查到原始研究。模型侧这周也不安静：Kimi K3.1 Pro 放出权重，腾讯 Hy4 同周发布，社区里还有 Revolut 的自托管实践。
 
 ## 🚀 产品与模型动态
 
@@ -29,15 +29,11 @@ Surge 的对照实验里，同一模型提高推理预算的收益高于继续�
 
 ### 🧰 其他工具与模型
 
-**Mistral Large 4 开放权重**：1T 参数原生多模态，欧洲基础设施从头训练。在 Cognition 私有的 FrontierCode 2.0（评估 agent 改动能否被 maintainer merge）拿到 19.7%，Terminal-Bench 4.0 提升 13 个百分点至 41%，AA Coding Agent Index 48%，与 GLM-5.3 基本战平但平均每任务少用 47% token；Surge Code 盲测中只输给 Opus 5.5。防御性安全是另一半重点：Cyber Index 51%，恶意网络请求拒绝率 96.6%，B3 Agent 攻击抵抗 97.1%。API 定价 $0.70/$2.10，修改版 MIT 许可，只有 MaaS 转售需要单独授权。开源 coding 模型从 GLM-5.3 一家独大变成两家竞争。权重发布帖在 Hacker News 拿到 1,732 分。
-
-**扩散语言模型开始进入 coding 赛道**：Clover-35B-A3B-Preview 用 MoE 加块级扩散生成，速度 680 tokens/s，SWE-bench Verified 73.6、Terminal-Bench 2.1 51.7，Apache-2.0 开源。它的通用能力并非全面领先，端到端收益也会被外部工具调用吃掉，但「不再逐个 token 生成」这条路线第一次在 agent 基准上站住了。
-
-**Kimi K3.1 Pro 的权重已经开放**：2.8T 总参数、104B 激活的 MoE，1M 上下文，原生多模态，Terminal-Bench 4.0 报 65.7，这些上期讲过，本周落地的是权重与许可证。Hugging Face 上的 96 个分片是 MXFP4 权重、MXFP8 激活的量化版，训练阶段就做了量化感知。许可证不是 Apache 或 MIT，而是自定义的 Kimi K3.1-Pro License：允许商用、微调和再分发，但经营「模型即服务」且任意连续 12 个月合计收入超过 2000 万美元的团队，需要先和 Moonshot 单独签约；月活过亿或月收入 2000 万美元以上的产品，还要求在界面上标注模型名。2.8T 的体量决定了自托管门槛很高，多数团队更现实的路还是 API 或托管平台。
+**[Kimi K3.1 Pro](https://huggingface.co/moonshotai/Kimi-K3.1-Pro) 的权重已经开放**：2.8T 总参数、104B 激活的 MoE，1M 上下文，原生多模态，Terminal-Bench 4.0 报 65.7，这些上期讲过，本周落地的是权重与许可证。Hugging Face 上的 96 个分片是 MXFP4 权重、MXFP8 激活的量化版，训练阶段就做了量化感知。许可证不是 Apache 或 MIT，而是自定义的 [Kimi K3.1-Pro License](https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE)：允许商用、微调和再分发，但经营「模型即服务」且任意连续 12 个月合计收入超过 2000 万美元的团队，需要先和 Moonshot 单独签约；月活过亿或月收入 2000 万美元以上的产品，还要求在界面上标注模型名。2.8T 的体量决定了自托管门槛很高，多数团队更现实的路还是 API 或托管平台。
 
 ![](https://cdn.zhangferry.com/Images/x-curator/R-2026-11-05/kimi-k31-official-benchmarks.webp)
 
-**腾讯 Hy4 正式版**：相比 preview 扩大了预训练与后训练规模，首次加入视觉理解和电脑操作，能把命令行、图形界面和工具调用串起来做多步任务；上下文约 105 万 token，单次最多输出 65,536 token。腾讯官方评测表把 Kimi K3.1 Pro 放在同一张表里：DeepSWE v1.1 上 Hy4 是 74.9、Kimi 是 75.5，FrontierCode 2.0 上 Hy4 的 31.6 反而高于 Kimi 的 25.5。差距集中在长程命令行任务：Terminal-Bench 4.0 只有 44.4，Kimi 是 65.7。价格也便宜得多：国际站目录价每百万 token 输入 $0.834、输出 $2.501，年底前按五折结算，两项都不到 Kimi K3.1 Pro（$2/$10）的一半。正式版权重还没开放，Hugging Face 上目前只有 Apache-2.0 的 Hy4-preview，官方说计划开源。
+**[腾讯 Hy4 正式版](https://hunyuan.tencent.com/research/hy4)**：相比 preview 扩大了预训练与后训练规模，首次加入视觉理解和电脑操作，能把命令行、图形界面和工具调用串起来做多步任务；上下文约 105 万 token，单次最多输出 65,536 token。腾讯官方评测表把 Kimi K3.1 Pro 放在同一张表里：DeepSWE v1.1 上 Hy4 是 74.9、Kimi 是 75.5，FrontierCode 2.0 上 Hy4 的 31.6 反而高于 Kimi 的 25.5。差距集中在长程命令行任务：Terminal-Bench 4.0 只有 44.4，Kimi 是 65.7。价格也便宜得多：国际站目录价每百万 token 输入 $0.834、输出 $2.501，年底前按五折结算，两项都不到 Kimi K3.1 Pro（$2/$10）的一半。正式版权重还没开放，Hugging Face 上目前只有 Apache-2.0 的 Hy4-preview，官方说计划开源。
 
 ![](https://cdn.zhangferry.com/Images/x-curator/R-2026-11-05/hy4-official-benchmarks.jpg)
 
