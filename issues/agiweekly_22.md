@@ -1,4 +1,4 @@
-# AGI 摸鱼周报 #22：Harness 的下一步，我的专属工作台
+# AGI 摸鱼周报 #22：Harness 下一步，打造专属工作台
 
 ![](https://cdn.zhangferry.com/Images/x-cover.png)
 
