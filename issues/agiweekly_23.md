@@ -198,6 +198,6 @@ DeepSeek Harness 用插件组织工具、界面和 Agent 能力。这次的 [v0.
 
 ## 📜 往期推荐
 
-- [AGI 摸鱼周报 #22：Harness 下一步，打造专属工作台](https://github.com/zhangferry/AGI-Weekly/blob/main/issues/agiweekly_22.md)
+- [AGI 摸鱼周报 #22：Harness 下一步，打造专属工作台](https://mp.weixin.qq.com/s?__biz=MzU2MDQzMjM3Ng==&mid=2247491618&idx=1&sn=e8c9722644e728da5c6e9bdb4e9a1b11&chksm=fc0ab5b5cb7d3ca351ecfc5f84827c036b9cefaeb86b64c4c994f32267323786dd3d4eb7452d#rd)
 - [AGI 摸鱼周报 #21：Agent 越来越强，架构还要越来越复杂吗？](https://mp.weixin.qq.com/s?__biz=MzU2MDQzMjM3Ng==&mid=2247491594&idx=1&sn=a69429cf36f3ae94ebf36eeda506c59d&chksm=fc0ab59dcb7d3c8ba4cab721e827e9671baa862358dafd0a5f7b1c687542240f54fffc66d393#rd)
 - [AGI 摸鱼周报 #20：当 AI 能拆解一切软件，商业秘密还剩什么？](https://mp.weixin.qq.com/s?__biz=MzU2MDQzMjM3Ng==&mid=2247491526&idx=1&sn=001e4f40dcd2f748dae089008f254429&chksm=fc094a51cb7ec3473dc842720b789f4dc5d762c3ba72c59b23c0d83ae6207cefa039d4b7cef0#rd)
