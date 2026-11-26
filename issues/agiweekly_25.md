@@ -82,7 +82,7 @@ iFood 维护 1.5 万多个代码仓库，周期性的漏洞依赖修复、规范
 
 **Agent 要跨目录自主干活，操作系统的权限模型却要求人一次次点确认。**
 
-![](https://cdn.zhangferry.com/Images/x-curator/R-2026-11-26/pick-fatbobman-163.webp)
+![](https://cdn.zhangferry.com/Images/x-curator/R-2026-11-26/pick-fatbobman-163-v2.png)
 
 这期周报的卷首语从一个具体变化说起：macOS 27.3 beta 2 里给应用授予完全磁盘访问权限时，提示框的警告意味比以往任何版本都重，系统也在引导用户转向按目录、按应用的细粒度授权。作者自己的经历是，即便已经给 Xcode headless MCP 授了完整权限，只要打开 Xcode，Preview 截图时仍会弹权限窗口。
 
@@ -94,7 +94,7 @@ iFood 维护 1.5 万多个代码仓库，周期性的漏洞依赖修复、规范
 
 **harness 不是聊天侧栏，它是 agent 时代的 IDE，缺的是设计取舍而不是模型能力。**
 
-![](https://cdn.zhangferry.com/Images/x-curator/R-2026-11-26/pick-dreamcoder.webp)
+![](https://cdn.zhangferry.com/Images/x-curator/R-2026-11-26/pick-dreamcoder-v2.png)
 
 《Mastering Emacs》的作者 Mickey Petersen 花了 15 个月做出 DreamCoder，一个跑在浏览器里的 coding harness，三大平台可用。产品形态直接借 Emacs：平铺窗口管理器，每个 pane 有最小、舒适、最大三种尺寸，塞不下的进隐藏窗口栏；workspace 快照；avy 式跳转和 embark 式操作。harness 该有的也在：MCP、可后台的子 agent 和 shell 命令、终端窗口、skills、hooks。
 
