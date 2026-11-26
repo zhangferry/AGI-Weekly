@@ -8,12 +8,13 @@ AGI 摸鱼周报是一份每周更新的 AI 技术周报，关注 Coding Agent�
 
 ## 最新一期
 
-- [AGI 摸鱼周报 #24：五家前沿模型同周发布，价格卷到了竞品的 5%](./issues/agiweekly_24.md)
+- [AGI 摸鱼周报 #25：从写 skill 到运营 skill](./issues/agiweekly_25.md)
 
 ## 往期周报
 
 | 期数 | 标题 | 博客 |
 | --- | --- | --- |
+| #25 | [从写 skill 到运营 skill](./issues/agiweekly_25.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_25/) |
 | #24 | [五家前沿模型同周发布，价格卷到了竞品的 5%](./issues/agiweekly_24.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_24/) |
 | #23 | [合并 Agent 的代码前，先查这三件事](./issues/agiweekly_23.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_23/) |
 | #22 | [Harness 下一步，打造专属工作台](./issues/agiweekly_22.md) | [在线阅读](https://zhangferry.com/weeklys/agiweekly_22/) |
